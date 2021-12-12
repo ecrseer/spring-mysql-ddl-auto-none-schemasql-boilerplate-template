@@ -12,7 +12,7 @@ import com.ecrseer.scraptiss.entities.Seller;
 
 @Service
 public class SellerService {
-
+	@Autowired
 	private SellerRepository repository;
 	
 	public List<SellerDTO> findAll(){

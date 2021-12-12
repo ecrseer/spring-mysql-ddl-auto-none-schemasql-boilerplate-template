@@ -1,21 +1,19 @@
 
-    create table tb_sales (
-       id bigint not null auto_increment,
-        amount double precision,
-        date date,
-        deals integer,
-        visited integer,
-        seller_id bigint,
-        primary key (id)
-    ) engine=InnoDB;
 
-    create table tb_sellers (
+    CREATE TABLE IF NOT EXISTS  tb_sellers (
        id bigint not null auto_increment,
         name varchar(255),
         primary key (id)
     ) engine=InnoDB;
 
-    alter table tb_sales 
-       add constraint FKp0nn0oixeiw2fq3jivj6vnsu 
-       foreign key (seller_id) 
-       references tb_sellers (id);
+    CREATE TABLE IF NOT EXISTS  tb_sales (
+           idSales bigint not null auto_increment,
+            amount double precision,
+            date date,
+            deals integer,
+            visited integer,
+            seller_id bigint,
+            PRIMARY KEY (idSales),
+            FOREIGN KEY (seller_id) REFERENCES tb_sellers(id)
+        ) engine=InnoDB;
+

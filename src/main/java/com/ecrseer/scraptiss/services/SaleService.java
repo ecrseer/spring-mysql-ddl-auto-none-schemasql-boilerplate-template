@@ -18,8 +18,9 @@ import com.ecrseer.scraptiss.entities.Sale;
 @Service
 public class SaleService {
 
+	@Autowired
 	private SaleRepository repository;
-
+	@Autowired
 	private SellerRepository sellerRepository;
 	
 	@Transactional(readOnly = true)
